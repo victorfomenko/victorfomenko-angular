@@ -20,7 +20,6 @@ function mainController ($scope, $timeout, $location) {
                     height: "100%",
                     fit: 'cover',
                     startindex : 1,
-                    path: true,
                     nav: 'thumbs',
                     keyboard: true,
                     thumbwidth: 84,
