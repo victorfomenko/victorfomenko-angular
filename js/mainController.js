@@ -1,5 +1,6 @@
 var ajaxFolder = "/ajax/";
 function mainController ($scope, $timeout, $location) {
+    $scope.public = {};
     $scope.menu = [
         { name: "Свадьбы", link: "weddings" },
         { name: "Портреты", link: "portraits"},
@@ -56,19 +57,19 @@ angular.module('ngView', ['ngRoute'], function($routeProvider, $locationProvider
 });
 
 function HomeController($scope, imageStack) {
-    $scope.imageStack = imageStack;
+    $scope.public.imageStack = imageStack;
     $scope.initPlugin();
 }
 function WeddingsController($scope, imageStack) {
-    $scope.imageStack = imageStack;
+    $scope.public.imageStack = imageStack;
     $scope.initPlugin();
 }
 function PortraitsController($scope, imageStack) {
-    $scope.imageStack = imageStack;
+    $scope.public.imageStack = imageStack;
     $scope.initPlugin();
 }
 function ReportsController($scope, imageStack) {
-    $scope.imageStack = imageStack;
+    $scope.public.imageStack = imageStack;
     $scope.initPlugin();
 }
 function getData ($q, $http, $location) {
