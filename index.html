@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="/css/victorfomenko.css" />
+		<link rel="stylesheet" type="text/css" href="/bower_components/fotorama/fotorama.css" />
+		<title>Victor Fomenko | Site</title>
+	</head>
+	<body  ng-app="ngView" ng-controller="mainController">
+	<div class="navbar navbar-static-top header">
+		<div class="container">
+			<div class="navbar-header">
+				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/">
+					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+							 width="50px" height="23px" viewBox="0 0 451 204.75" enable-background="new 0 0 451 204.75" xml:space="preserve">
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="2.75" y1="102.75" x2="2.75" y2="102.75">
+	<stop  offset="0" style="stop-color:#FFFFFF"/>
+	<stop  offset="1" style="stop-color:#000000"/>
+</linearGradient>
+							<line fill="url(#SVGID_1_)" stroke="#000000" stroke-width="5" stroke-linecap="round" stroke-miterlimit="10" x1="2.75" y1="3.25" x2="2.75" y2="202.25"/>
+							<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="2.4463" y1="102.8062" x2="233.75" y2="102.8062">
+								<stop  offset="0" style="stop-color:#FFFFFF"/>
+								<stop  offset="1" style="stop-color:#000000"/>
+							</linearGradient>
+							<line fill="url(#SVGID_2_)" stroke="#000000" stroke-width="5" stroke-linecap="round" stroke-miterlimit="10" x1="2.446" y1="202.362" x2="233.75" y2="3.25"/>
+							<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="234.25" y1="2.75" x2="448.25" y2="2.75">
+								<stop  offset="0" style="stop-color:#FFFFFF"/>
+								<stop  offset="1" style="stop-color:#000000"/>
+							</linearGradient>
+							<line fill="url(#SVGID_3_)" stroke="#000000" stroke-width="5" stroke-linecap="round" stroke-miterlimit="10" x1="234.25" y1="2.75" x2="448.25" y2="2.75"/>
+							<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="118.25" y1="102.75" x2="279.25" y2="102.75">
+								<stop  offset="0" style="stop-color:#FFFFFF"/>
+								<stop  offset="1" style="stop-color:#000000"/>
+							</linearGradient>
+							<line fill="url(#SVGID_4_)" stroke="#000000" stroke-width="5" stroke-linecap="round" stroke-miterlimit="10" x1="118.25" y1="102.75" x2="279.25" y2="102.75"/>
+</svg>
+				</a>
+			</div>
+			<nav class="navbar-collapse bs-navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li ng-class="{'active': isActive(item.link)}" ng-repeat="item in menu"><a href="/{{item.link}}/">{{item.name}}</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+	<div class="h_imagebox">
+		<div class="j_fotorama" ng-view></div>
+	</div>
+	<div class="content bio">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<img class="bio__avatar" src="/img/me2.jpg" alt="Victor Fomenko"/>
+					<p>Привет! Меня зовут Виктор. На данный момент я живу, фотографирую и работаю в Казани. Занимаюсь фото с 2009 года. За плечами большой опыт съемки свадеб, фотосессий, репортажей. Являюсь одним из создателей клубного казанского портала
+						<a href="http://shurum-burum.ru/" target="_blank">Шурум-бурум</a> и его бывшим штатным фотографом.</p>
+
+					<p>Фото всегда увлекало, манило, завараживало меня. Всегда хотелось сделать необычные, нестрандартные, интересные кадры. И если вы хотитие того же самого — просто
+						<a href="http://vk.com/victorfomenko" target="_blank">напишите мне</a> и мы обсудим все подробности.</p>
+
+					<p>Несмотря на то, что фотография всегда была и остаётся частью моей жизни моя основная специализация — web-программирование (создание сайтов). Кстати, этот сайт я тоже сделал своими руками :) Так что теперь вы ещё и знаете кто вам может помочь в создании красивого сайта-портфолио, сайта-визитки, сайта компании или чего-нибудь иного и специфичного.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="container">
+			<svg class="footer__logo" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 width="50px" height="23px" viewBox="0 0 451 204.75" enable-background="new 0 0 451 204.75" xml:space="preserve">
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="2.75" y1="102.75" x2="2.75" y2="102.75">
+	<stop  offset="0" style="stop-color:#FFFFFF"/>
+	<stop  offset="1" style="stop-color:#8C989E"/>
+</linearGradient>
+					<line fill="url(#SVGID_1_)" stroke="#8C989E" stroke-width="5" stroke-linecap="round" stroke-miterlimit="10" x1="2.75" y1="3.25" x2="2.75" y2="202.25"/>
+					<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="2.4463" y1="102.8062" x2="233.75" y2="102.8062">
+						<stop  offset="0" style="stop-color:#FFFFFF"/>
+						<stop  offset="1" style="stop-color:#8C989E"/>
+					</linearGradient>
+					<line fill="url(#SVGID_2_)" stroke="#8C989E" stroke-width="5" stroke-linecap="round" stroke-miterlimit="10" x1="2.446" y1="202.362" x2="233.75" y2="3.25"/>
+					<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="234.25" y1="2.75" x2="448.25" y2="2.75">
+						<stop  offset="0" style="stop-color:#FFFFFF"/>
+						<stop  offset="1" style="stop-color:#8C989E"/>
+					</linearGradient>
+					<line fill="url(#SVGID_3_)" stroke="#8C989E" stroke-width="5" stroke-linecap="round" stroke-miterlimit="10" x1="234.25" y1="2.75" x2="448.25" y2="2.75"/>
+					<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="118.25" y1="102.75" x2="279.25" y2="102.75">
+						<stop  offset="0" style="stop-color:#FFFFFF"/>
+						<stop  offset="1" style="stop-color:#8C989E"/>
+					</linearGradient>
+					<line fill="url(#SVGID_4_)" stroke="#8C989E" stroke-width="5" stroke-linecap="round" stroke-miterlimit="10" x1="118.25" y1="102.75" x2="279.25" y2="102.75"/>
+</svg>
+			<p>&copy;2012-2014 Victor Fomenko</p>
+			<ul class="social social-footer">
+				<li class="social__item"><a href="http://vk.com/victorfomenko" target="_blank"><i class="icon-vkontakte"></i></a></li>
+				<li class="social__item"><a href="http://instagram.com/victorfomenko" target="_blank"><i class="icon-instagram-fontawesome"></i></a></li>
+				<li class="social__item"><a href="http://facebook.com/victorfomenko" target="_blank"><i class="icon-facebook"></i></a></li>
+				<li class="social__item"><a href="https://twitter.com/VictorFomenko" target="_blank"><i class="icon-twitter"></i></a></li>
+			</ul>
+		</div>
+	</div>
+	</body>
+	<script type="text/javascript" src="/bower_components/angular/angular.min.js"></script>
+	<script type="text/javascript" src="/bower_components/angular-route/angular-route.min.js"></script>
+	<script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="/bower_components/fotorama/fotorama.js"></script>
+	<script type="text/javascript" src="/js/mainController.js"></script>
+</html>
