@@ -2,7 +2,7 @@
 	$url = $_REQUEST["url"];
 	$dbIP = 'localhost';
 	$dbUser = 'root';
-	$dbPass = 'infected29';
+	$dbPass = 'TwofRag83';
 	$dbName = 'victorfomenko';
 	$connection = mysql_connect ( $dbIP ,$dbUser, $dbPass ) or DIE( "Couldn't connect ot DB" );
 	mysql_select_db( $dbName ) 	or DIE( "Couldn't connect ot DB" );
