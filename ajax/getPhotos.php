@@ -1,6 +1,6 @@
 <?php
 	$url = $_REQUEST["url"];
-	$dbIP = '192.168.0.220';
+	$dbIP = 'localhost';
 	$dbUser = 'root';
 	$dbPass = 'infected29';
 	$dbName = 'victorfomenko';
