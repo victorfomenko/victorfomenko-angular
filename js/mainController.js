@@ -6,11 +6,11 @@ function mainController ($scope, $timeout, $location) {
         { name: "Портреты", link: "portraits"},
         { name: "Репортажи", link: "reports" }
     ]
-    $scope.path = function(){
+    $scope.public.path = function(){
         return $location.url().replace(/^\/?([^\/].+[^\/])\/?$/, "$1");
     }
     $scope.isActive = function(link){
-        return link == $scope.path();
+        return link == $scope.public.path();
     }
     $scope.initPlugin = function() {
         $timeout(function(){
@@ -30,24 +30,28 @@ function mainController ($scope, $timeout, $location) {
     }
 }
 
-angular.module('ngView', ['ngRoute'], function($routeProvider, $locationProvider) {
+var ngView = angular.module('ngView', ['ngRoute'], function($routeProvider, $locationProvider) {
     $routeProvider
         .when('/', {
+            title: "Home",
             templateUrl: '/templates/home.html',
             controller: HomeController,
             resolve: {imageStack: getData}
         })
         .when('/weddings/', {
+            title: "Weddings",
             templateUrl: '/templates/weddings.html',
             controller: WeddingsController,
             resolve: {imageStack: getData}
         })
         .when('/portraits/', {
+            title: "Portraits",
             templateUrl: '/templates/portraits.html',
             controller: PortraitsController,
             resolve: {imageStack: getData}
         })
         .when('/reports/', {
+            title: "Reports",
             templateUrl: '/templates/reports.html',
             controller: ReportsController,
             resolve: {imageStack: getData}
@@ -55,6 +59,12 @@ angular.module('ngView', ['ngRoute'], function($routeProvider, $locationProvider
     // configure html5 to get links working on jsfiddle
     $locationProvider.html5Mode(true);
 });
+
+ngView.run(['$location', '$rootScope', function($location, $rootScope) {
+    $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
+        $rootScope.title = current.$$route.title;
+    });
+}]);
 
 function HomeController($scope, imageStack) {
     $scope.public.imageStack = imageStack;

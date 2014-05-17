@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="ngView" ng-controller="mainController">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="/css/victorfomenko.css" />
 		<link rel="stylesheet" type="text/css" href="/bower_components/fotorama/fotorama.css" />
-		<title>Victor Fomenko | Site</title>
+		<title ng-bind="'Victor Fomenko &mdash; ' + title">Victor Fomenko</title>
 	</head>
-	<body  ng-app="ngView" ng-controller="mainController">
+	<body >
 	<div class="navbar navbar-static-top header">
 		<div class="container">
 			<div class="navbar-header">
