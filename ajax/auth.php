@@ -6,7 +6,7 @@
 		$userPass = $_REQUEST['auth_pass'];
 
 		//Запрашиваем пароль пользователя из БД.
-		$q = "	SELECT id, password, last_login, admin
+		$q = "	SELECT id, name, password, last_login, admin
 			FROM users
 			WHERE name='" . $userName . "' and password='" . $userPass . "'";
 
@@ -17,6 +17,8 @@
 		//Создаём сессию, если авторизация прошла успешно.
 		session_start();
 		$_SESSION['user_id'] = $user[0]['id'];
+		$_SESSION['user_name'] = $user[0]['name'];
+		$_SESSION['isadmin'] = $user[0]['admin'];
 		$_SESSION['ip'] = $_SERVER['REMOTE_ADDR'];
 //		header("Location: http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 		print("Auth success!");
@@ -32,11 +34,17 @@
 		header("Location: http://".$_SERVER['HTTP_HOST']."/");
 		exit;
 	}
-	//Стартуем сессию, если уже была создана.
-
-
-	session_start();
-	echo ($_SESSION['ip']);
 	if (isset($_SESSION['user_id']) AND $_SESSION['ip'] == $_SERVER['REMOTE_ADDR']) return;
+
+	if (false) {
+		session_start();
+		$userData = array(
+			"id" => $_SESSION['user_id'],
+			"name" => $_SESSION['user_name'],
+			"isAdmin" => $_SESSION['isadmin']
+		);
+		header ("Content-Type: application/json");
+		echo(json_encode($userData));
+	}
 	exit;
 ?>

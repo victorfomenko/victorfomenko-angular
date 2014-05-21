@@ -1,18 +1,28 @@
 var ajaxFolder = "/ajax/";
 function mainController ($scope, $timeout, $location) {
     $scope.public = {};
+    $scope.public.loginFormIsShow = false;
     $scope.menu = [
         { name: "Свадьбы", link: "weddings" },
         { name: "Портреты", link: "portraits"},
         { name: "Репортажи", link: "reports" }
     ]
+    $scope.templates = [
+        { name: 'about.html', url: '/templates/about.html'},
+        { name: 'login.html', url: '/templates/login.html'} ];
+    $scope.about = $scope.templates[0];
+    $scope.login = $scope.templates[1];
+
     $scope.public.path = function(){
         return $location.url().replace(/^\/?([^\/].+[^\/])\/?$/, "$1");
     }
     $scope.isActive = function(link){
         return link == $scope.public.path();
     }
-    $scope.initPlugin = function() {
+    $scope.initPlugin = function(imageStack) {
+        $scope.public.imageStack = imageStack;
+        $scope.public.aboutIsVisible = $scope.public.path() == "/";
+
         $timeout(function(){
             $(document).ready( function () {
                 $('.j_fotorama').fotorama({
@@ -26,7 +36,13 @@ function mainController ($scope, $timeout, $location) {
                     thumbheight: 56
                 });
             })
-        })
+        });
+    }
+    $scope.showLoginForm = function () {
+        $scope.public.loginFormIsShow = true;
+    }
+    $scope.hideLoginForm = function () {
+        $scope.public.loginFormIsShow = false;
     }
 }
 
@@ -67,20 +83,16 @@ ngView.run(['$location', '$rootScope', function($location, $rootScope) {
 }]);
 
 function HomeController($scope, imageStack) {
-    $scope.public.imageStack = imageStack;
-    $scope.initPlugin();
+    $scope.initPlugin(imageStack);
 }
 function WeddingsController($scope, imageStack) {
-    $scope.public.imageStack = imageStack;
-    $scope.initPlugin();
+    $scope.initPlugin(imageStack);
 }
 function PortraitsController($scope, imageStack) {
-    $scope.public.imageStack = imageStack;
-    $scope.initPlugin();
+    $scope.initPlugin(imageStack);
 }
 function ReportsController($scope, imageStack) {
-    $scope.public.imageStack = imageStack;
-    $scope.initPlugin();
+    $scope.initPlugin(imageStack);
 }
 function getData ($q, $http, $location) {
     var defer = $q.defer();

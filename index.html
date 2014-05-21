@@ -47,28 +47,16 @@
 				<ul class="nav navbar-nav">
 					<li ng-class="{'active': isActive(item.link)}" ng-repeat="item in menu"><a href="/{{item.link}}/">{{item.name}}</a></li>
 				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#" ng-click="showLoginForm()">Войти</a></li>
+				</ul>
 			</nav>
 		</div>
 	</div>
 	<div class="h_imagebox">
 		<div class="j_fotorama" ng-view></div>
 	</div>
-	<div class="content bio">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-					<img class="bio__avatar" src="/img/me2.jpg" alt="Victor Fomenko"/>
-					<p>Привет! Меня зовут Виктор. На данный момент я живу, фотографирую и работаю в Казани. Занимаюсь фото с 2009 года. За плечами большой опыт съемки свадеб, фотосессий, репортажей. Являюсь одним из создателей клубного казанского портала
-						<a href="http://shurum-burum.ru/" target="_blank">Шурум-бурум</a> и его бывшим штатным фотографом.</p>
-
-					<p>Фото всегда увлекало, манило, завараживало меня. Всегда хотелось сделать необычные, нестрандартные, интересные кадры. И если вы хотитие того же самого — просто
-						<a href="http://vk.com/victorfomenko" target="_blank">напишите мне</a> и мы обсудим все подробности.</p>
-
-					<p>Несмотря на то, что фотография всегда была и остаётся частью моей жизни моя основная специализация — web-программирование (создание сайтов). Кстати, этот сайт я тоже сделал своими руками :) Так что теперь вы ещё и знаете кто вам может помочь в создании красивого сайта-портфолио, сайта-визитки, сайта компании или чего-нибудь иного и специфичного.</p>
-				</div>
-			</div>
-		</div>
-	</div>
+	<div ng-include="about.url" ng-if="public.aboutIsVisible"></div>
 	<div class="footer">
 		<div class="container">
 			<svg class="footer__logo" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -103,6 +91,7 @@
 			</ul>
 		</div>
 	</div>
+	<div ng-include="login.url" ng-show="public.loginFormIsShow"></div>
 	</body>
 	<script type="text/javascript" src="/js/!analitycs.js"></script>
 	<script type="text/javascript" src="/bower_components/angular/angular.min.js"></script>
