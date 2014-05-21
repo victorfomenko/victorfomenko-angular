@@ -27,7 +27,7 @@
 	if (isset($_GET['action']) AND $_GET['action']=="logout") {
 		session_start();
 		session_destroy();
-		//setcookie(session_name(), "", null, "/" );
+		setcookie(session_name(), "", null, "/" );
 
 		header("Location: http://".$_SERVER['HTTP_HOST']."/");
 		exit;
