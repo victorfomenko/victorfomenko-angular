@@ -43,21 +43,4 @@
 	header ("Content-Type: application/json");
 	echo(json_encode($imageStack));
 
-function getDataFromDB ( $q ) {
-	$command = mysql_query($q);
-	$dataReader = dbArray($command);
-	return $dataReader;
-}
-function dbArray( $recordset ) {
-	if ( ! $recordset ) { return false; }
-
-	$res = array();
-	$i = 0;
-	while ( $row = mysql_fetch_assoc ( $recordset ) )
-	{
-		$res[ $i ] = $row;
-		$i++;
-	}
-	return $res;
-}
 ?>
