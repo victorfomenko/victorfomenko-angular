@@ -1,14 +1,14 @@
 <div class="login">
 	<div class="login__close"><i class="m-close" ng-click="hideLoginForm()"></i></div>
 	<div class="login__container">
-		<form action="ajax/auth.php" method="POST">
+		<form ng-submit="auth()" ng-controller="authController">
 			<div class="form-group">
-				<input type="text" class="form-control" id="exampleInputEmail1" placeholder="Логин" name="auth_name">
+				<input type="text" class="form-control" id="exampleInputEmail1" placeholder="Логин" name="auth_name" ng-model="userName">
 			</div>
 			<div class="form-group">
-				<input type="password" class="form-control" id="password" placeholder="Пароль" name="auth_pass">
+				<input type="password" class="form-control" id="password" placeholder="Пароль" name="auth_pass" ng-model="userPass">
 			</div>
-			<button class="btn btn-default" type="submit" ng-submit="login()">Войти</button>
+			<button class="btn btn-default" type="submit">Войти</button>
 			<a class="login__container__abort btn" href="javascript:void(0)" ng-click="hideLoginForm()">Отмена</a>
 		</form>
 	</div>
