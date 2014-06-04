@@ -6434,16 +6434,25 @@ body {
   bottom: 0;
   background-color: #fff;
   z-index: 10;
-  display: -webkit-flex;
-  display: -moz-flex;
+  display: -webkit-box;
+/* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+/* OLD - Firefox 19- (buggy but mostly works) */
   display: -ms-flexbox;
-  display: -ms-flex;
+/* TWEENER - IE 10 */
+  display: -webkit-flex;
+/* NEW - Chrome */
   display: flex;
+/* NEW, Spec - Opera 12.1, Firefox 20+ */
   justify-content: center;
 }
 .login__container {
   align-self: center;
   max-width: 500px;
+}
+.login__container__abort {
+  float: right;
+  padding-right: 0;
 }
 .login__close {
   position: absolute;
