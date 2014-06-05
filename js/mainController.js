@@ -4,8 +4,9 @@ function mainController ($scope, $timeout, $location) {
     $scope.public.loginFormIsShow = false;
     $scope.menu = [
         { name: "Свадьбы", link: "weddings" },
-        { name: "Портреты", link: "portraits"},
-        { name: "Репортажи", link: "reports" }
+        { name: "Портреты", link: "portraits" },
+        { name: "Репортажи", link: "reports" },
+        { name: "Загрузить", link: "loadpic", isHide: function(){ return !$scope.public.isAdmin } }
     ]
     $scope.templates = [
         { name: 'about.html', url: '/templates/about.html'},
@@ -44,6 +45,9 @@ function mainController ($scope, $timeout, $location) {
     $scope.hideLoginForm = function () {
         $scope.public.loginFormIsShow = false;
     }
+    $scope.public.isLogin = getCookie("PHPSESSID");
+    $scope.public.userName = getCookie("userName");
+    $scope.public.isAdmin = getCookie("isAdmin");
 }
 
 var ngView = angular.module('ngView', ['ngRoute'], function($routeProvider, $locationProvider) {
@@ -93,6 +97,15 @@ function PortraitsController($scope, imageStack) {
 }
 function ReportsController($scope, imageStack) {
     $scope.initPlugin(imageStack);
+}
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i].trim();
+        if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+    }
+    return "";
 }
 function getData ($q, $http, $location) {
     var defer = $q.defer();

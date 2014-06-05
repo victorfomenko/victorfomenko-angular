@@ -5890,10 +5890,19 @@ body {
   float: right;
   padding-right: 0;
 }
+.login__help-block {
+  visibility: hidden;
+  color: #d44950;
+  font-size: 12px;
+  margin: 0;
+}
 .login__close {
   position: absolute;
   right: 20px;
   top: 20px;
+}
+.login--error .login__help-block {
+  visibility: visible;
 }
 .bio {
   font-size: 17px;

@@ -8,28 +8,25 @@ function authController ($scope, $http) {
         };
         $http.post('/ajax/auth.php', sendingData)
             .success(function(data){
-                $scope.isLogin = getCookie("PHPSESSID");
-                $scope.userName = getCookie("userName");
-                $scope.isAdmin = getCookie("isAdmin");
+                $scope.public.isLogin = getCookie("PHPSESSID");
+                $scope.public.userName = getCookie("userName");
+                $scope.public.isAdmin = getCookie("isAdmin");
 
                 if(!data.login) {
-                    $scope.isFormError = true;
+                    $scope.public.isFormError = true;
                     return;
                 }
+                $scope.public.isFormError = false;
                 $scope.hideLoginForm();
             })
             .error(function(){
                 console.log("Something went wrong. AJAX ERROR.");
             });
-
     };
-    function getCookie(cname) {
-        var name = cname + "=";
-        var ca = document.cookie.split(';');
-        for(var i=0; i<ca.length; i++) {
-            var c = ca[i].trim();
-            if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
-        }
-        return "";
-    }
+    $scope.public.logout = function(){
+        $http.get('/ajax/auth.php?action=logout')
+            .success(function(){
+                $scope.public.isLogin = $scope.public.userName = $scope.public.isAdmin = false;
+            })
+    };
 }
