@@ -6899,6 +6899,10 @@ body {
 }
 .landing-img {
   position: relative;
-  background-size: 100%;
   margin-bottom: 80px;
+  overflow: hidden;
+}
+.landing-img img {
+  width: 100%;
+  vertical-align: middle;
 }
