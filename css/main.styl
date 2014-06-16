@@ -1,5 +1,156 @@
-.nobr
+
+/* TEXT
+-------------------------------------------------*/
+.m-text_light
+	color: #B6B8BA !important
+
+.m-text_muted
+	color: #999999 !important
+
+.m-text_primary
+	color: #428bca !important
+
+.m-text_warning
+	color: #c09853 !important
+
+.m-text_danger
+	color: #b94a48 !important
+
+.m-text_success
+	color: #468847 !important
+
+.m-text_info
+	color: #3a87ad !important
+
+.m-text_left
+	text-align: left
+
+.m-text_right
+	text-align: right
+
+.m-text_center
+	text-align: center
+
+.m-text_small
+	font-size 0.846em
+
+.m-text_big
+	font-size 1.154em
+
+.m-text_large
+	font-size 1.308em
+
+.m-text_big
+	font-size 1.077em
+
+.m-float_left
+	float left
+
+.m-float_right
+	float right
+
+.m-display_inline-block
+	display inline-block
+
+.m-bg_gray
+	background-color COLOR_GRAY !important
+
+.nobr,
+.m-nowrap
 	white-space nowrap
+
+.m-like-button
+	@extend .btn
+	background: rgba(0, 0, 0, 0)
+	text-decoration: underline
+	border-color: rgba(0, 0, 0, 0)
+	color COLOR_TEXT_LIGHT
+
+.m-position_relative
+	position relative !important
+
+.m-like-button:hover
+	color COLOR_TEXT
+
+
+.m-close
+	width 10px
+	display inline-block
+	height 10px
+	cursor pointer
+	background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjhFQTMwRjdCNkI1MDExRTE4OTE0QjY0OEI5NDM3ODhFIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjhFQTMwRjdDNkI1MDExRTE4OTE0QjY0OEI5NDM3ODhFIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6OEVBMzBGNzk2QjUwMTFFMTg5MTRCNjQ4Qjk0Mzc4OEUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6OEVBMzBGN0E2QjUwMTFFMTg5MTRCNjQ4Qjk0Mzc4OEUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz48F1o1AAAAiUlEQVR42oyQ0Q0EIQhEWc8abMImdis7qWRLOS3CKmxiZxLcEOPHkRhheCEDh6pK7/3MOVfZxOx9Ukon6t8YQ5C3BSr4bvRasEmKV9D4LhDrQiZSREJIDOZ/OIhDJM4JHjbphRhB/oyw87TzHDfG1bTXM7V5nnv1BL3iLFyq+PNcHvILWq8+AgwAAfVRM0EI9D4AAAAASUVORK5CYII=')
+	background-repeat no-repeat
+	opacity 0.5
+
+.m-close:hover
+	opacity 1
+
+/*
+ * Image replacement
+ */
+
+.m-ir
+	background-color: transparent
+	border: 0
+	overflow: hidden
+/* IE 6/7 fallback */
+*text-indent: -9999px
+
+.m-ir:before
+	content: ""
+	display: block
+	width: 0
+	height: 150%
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.m-hidden
+	display: none !important
+	visibility: hidden
+
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.m-invisible
+	visibility: hidden
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *	`contenteditable` attribute is included anywhere else in the document.
+ *	Otherwise it causes space to appear at the top and bottom of elements
+ *	that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *	`:before` to contain the top-margins of child elements.
+ */
+
+.m-clearfix:before,
+.m-clearfix:after
+	content: ""
+	display: table
+
+.m-clearfix:after
+	clear: both
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.m-clearfix
+*zoom: 1
+
+
+*,
+*:before,
+*:after
+	box-sizing(border-box)
 
 .m-close
 	width 10px

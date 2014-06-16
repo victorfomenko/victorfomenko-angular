@@ -1,0 +1,63 @@
+.pricing
+	display inline-block
+	margin 0 auto
+
+.pricing__tarif
+	float left
+	background-color #FAFAFA
+	position relative
+	color #454545
+	padding 14px
+	border 1px solid #E1E1E1
+	width 275px
+	height 390px
+	/*height 450px*/
+
+.pricing__tarif:before
+	content: "";
+	position: absolute;
+	height: 5px;
+	left: -1px;
+	top: 0;
+	background-color: #93CC76;
+	width: 275px;
+
+.pricing__tarif__price
+	margin-top 25px
+	margin-bottom 39px
+	font-size 30px
+
+
+.pricing__tarif__list
+	padding 0 18px
+	/*margin-bottom 40px*/
+	text-align left
+
+	li
+		color: #9E9E9E
+		display: inline-block
+		margin-left: 7px
+		font-weight: 400
+		font-size: 14px
+		text-align left
+		margin-bottom: 6px;
+
+.pricing__btn
+	display: block
+	margin-bottom: 20px
+	position: absolute;
+	bottom 0
+	right 14px
+	left 14px
+	color #9E9E9E
+	display none
+
+
+.pricing__tarif--min:before
+	background-color: #ACE1FC;
+
+.pricing__tarif--middle:before
+	background-color: #FAD064;
+
+.pricing__tarif--max:before
+	background-color: #FF6161;

@@ -22,8 +22,6 @@ function mainController ($scope, $timeout, $location) {
     }
     $scope.initPlugin = function(imageStack) {
         $scope.public.imageStack = imageStack;
-        $scope.public.aboutIsVisible = $scope.public.path() == "/";
-
         $timeout(function(){
             $(document).ready( function () {
                 $('.j_fotorama').fotorama({
@@ -75,6 +73,11 @@ var ngView = angular.module('ngView', ['ngRoute'], function($routeProvider, $loc
             templateUrl: '/templates/reports.html',
             controller: ReportsController,
             resolve: {imageStack: getData}
+        })
+        .when('/price/', {
+            title: "Price",
+            templateUrl: '/templates/price.html',
+            controller: PriceController
         });
     // configure html5 to get links working on jsfiddle
     $locationProvider.html5Mode(true);
@@ -88,6 +91,7 @@ ngView.run(['$location', '$rootScope', function($location, $rootScope) {
 
 function HomeController($scope, imageStack) {
     $scope.initPlugin(imageStack);
+    $scope.public.aboutIsVisible = true;
 }
 function WeddingsController($scope, imageStack) {
     $scope.initPlugin(imageStack);
@@ -97,6 +101,9 @@ function PortraitsController($scope, imageStack) {
 }
 function ReportsController($scope, imageStack) {
     $scope.initPlugin(imageStack);
+}
+function PriceController() {
+    console.log("price");
 }
 function getCookie(cname) {
     var name = cname + "=";
