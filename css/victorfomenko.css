@@ -6672,7 +6672,7 @@ body {
   background-color: #5e5e5e;
 }
 .content {
-  margin: 100px 0;
+  padding: 51px 0 100px 0;
 }
 .footer {
   border-top: 1px solid #f7f7f7;
@@ -6836,7 +6836,8 @@ body {
 }
 .pricing {
   display: inline-block;
-  margin: 0 auto;
+  margin-top: 40px;
+  font-family: Calibri, Tahoma, Verdana, Arial, sans-serifalibri;
 }
 .pricing__tarif {
   float: left;
@@ -6846,7 +6847,7 @@ body {
   padding: 14px;
   border: 1px solid #e1e1e1;
   width: 275px;
-  height: 390px;
+  height: 420px;
 /*height 450px*/
 }
 .pricing__tarif:before {
@@ -6860,8 +6861,8 @@ body {
 }
 .pricing__tarif__price {
   margin-top: 25px;
-  margin-bottom: 39px;
-  font-size: 30px;
+  margin-bottom: 34px;
+  font-size: 38px;
 }
 .pricing__tarif__list {
   padding: 0 18px;
@@ -6870,12 +6871,12 @@ body {
 }
 .pricing__tarif__list li {
   color: #9e9e9e;
-  display: inline-block;
+  display: block;
   margin-left: 7px;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 15px;
   text-align: left;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 .pricing__btn {
   display: block;
@@ -6895,4 +6896,9 @@ body {
 }
 .pricing__tarif--max:before {
   background-color: #ff6161;
+}
+.landing-img {
+  position: relative;
+  background-size: 100%;
+  margin-bottom: 80px;
 }

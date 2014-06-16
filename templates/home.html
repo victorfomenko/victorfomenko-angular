@@ -1,1 +1,6 @@
-<a ng-repeat="item in public.imageStack track by $index" href='{{item.imgUrl}}'><img style="display:none" src='' ng-src='{{item.previewUrl}}' alt='{{item.title}}'></a>
+<div class="h_imagebox">
+	<div class="j_fotorama">
+		<a ng-repeat="item in public.imageStack track by $index" href='{{item.imgUrl}}'><img style="display:none" src='' ng-src='{{item.previewUrl}}' alt='{{item.title}}'></a>
+	</div>
+</div>
+<div ng-include="about.url"></div>

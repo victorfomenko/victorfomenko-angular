@@ -91,7 +91,6 @@ ngView.run(['$location', '$rootScope', function($location, $rootScope) {
 
 function HomeController($scope, imageStack) {
     $scope.initPlugin(imageStack);
-    $scope.public.aboutIsVisible = true;
 }
 function WeddingsController($scope, imageStack) {
     $scope.initPlugin(imageStack);
@@ -102,8 +101,7 @@ function PortraitsController($scope, imageStack) {
 function ReportsController($scope, imageStack) {
     $scope.initPlugin(imageStack);
 }
-function PriceController() {
-    console.log("price");
+function PriceController($scope) {
 }
 function getCookie(cname) {
     var name = cname + "=";
