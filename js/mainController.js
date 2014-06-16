@@ -6,6 +6,7 @@ function mainController ($scope, $timeout, $location) {
         { name: "Свадьбы", link: "weddings" },
         { name: "Портреты", link: "portraits" },
         { name: "Репортажи", link: "reports" },
+        { name: "Цены", link: "price" },
         { name: "Загрузить", link: "loadpic", isHide: function(){ return !$scope.public.isAdmin } }
     ]
     $scope.templates = [
