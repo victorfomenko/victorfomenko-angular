@@ -75,6 +75,11 @@ var ngView = angular.module('ngView', ['ngRoute'], function($routeProvider, $loc
             controller: ReportsController,
             resolve: {imageStack: getData}
         })
+        .when('/loadpic/', {
+            title: "Loading pictures",
+            templateUrl: '/templates/loadpic.html',
+            controller: LoadpicController
+        })
         .when('/price/', {
             title: "Price",
             templateUrl: '/templates/price.html',

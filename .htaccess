@@ -1,2 +1,2 @@
 rewriteEngine on
-rewriteRule ^/?(weddings|portraits|reports|login|price)/?$ index.html [L]
+rewriteRule ^/?(weddings|portraits|reports|login|loadpic|price)/?$ index.html [L]
