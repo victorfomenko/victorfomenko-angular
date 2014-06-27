@@ -45,11 +45,11 @@
 			</div>
 			<nav class="navbar-collapse bs-navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li ng-class="{'active': isActive(item.link)}" ng-repeat="item in menu" ng-hide="item.isHide()"><a href="/{{item.link}}/">{{item.name}}</a></li>
+					<li ng-class="{'active': isActive(item.link)}" ng-repeat="item in menu" ng-hide="item.isHide"><a href="/{{item.link}}/">{{item.name}}</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="#" ng-click="showLoginForm()" ng-show="!public.isAdmin">Войти</a></li>
-					<li><a href="#" ng-click="public.logout()" ng-show="public.isAdmin">Выйти</a></li>
+					<li><a href="#" ng-click="public.logout()" ng-show="public.isLogin">Выйти</a></li>
 				</ul>
 			</nav>
 		</div>

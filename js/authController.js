@@ -11,7 +11,7 @@ function authController ($scope, $http) {
                 $scope.public.isLogin = getCookie("PHPSESSID");
                 $scope.public.userName = getCookie("userName");
                 $scope.public.isAdmin = getCookie("isAdmin");
-
+                $scope.menu[4].isHide = $scope.public.isAdmin;
                 if(!data.login) {
                     $scope.public.isFormError = true;
                     return;
@@ -27,6 +27,7 @@ function authController ($scope, $http) {
         $http.get('/ajax/auth.php?action=logout')
             .success(function(){
                 $scope.public.isLogin = $scope.public.userName = $scope.public.isAdmin = false;
+                $scope.menu[4].isHide = $scope.public.isAdmin;
             })
     };
 }

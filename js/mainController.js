@@ -2,13 +2,18 @@ var ajaxFolder = "/ajax/";
 function mainController ($scope, $timeout, $location) {
     $scope.public = {};
     $scope.public.loginFormIsShow = false;
+    $scope.public.isLogin = getCookie("PHPSESSID");
+    $scope.public.userName = getCookie("userName");
+    $scope.public.isAdmin = getCookie("isAdmin");
+
     $scope.menu = [
         { name: "Свадьбы", link: "weddings" },
         { name: "Портреты", link: "portraits" },
         { name: "Репортажи", link: "reports" },
         { name: "Цены", link: "price" },
-        { name: "Загрузить", link: "loadpic", isHide: function(){ return !$scope.public.isAdmin } }
-    ]
+        { name: "Загрузить", link: "loadpic", isHide: !$scope.public.isAdmin }
+    ];
+
     $scope.templates = [
         { name: 'about.html', url: '/templates/about.html'},
         { name: 'login.html', url: '/templates/login.html'} ];
@@ -17,10 +22,10 @@ function mainController ($scope, $timeout, $location) {
 
     $scope.public.path = function(){
         return $location.url().replace(/^\/?([^\/].+[^\/])\/?$/, "$1");
-    }
+    };
     $scope.isActive = function(link){
         return link == $scope.public.path();
-    }
+    };
     $scope.initPlugin = function(imageStack) {
         $scope.public.imageStack = imageStack;
         $timeout(function(){
@@ -44,9 +49,7 @@ function mainController ($scope, $timeout, $location) {
     $scope.hideLoginForm = function () {
         $scope.public.loginFormIsShow = false;
     }
-    $scope.public.isLogin = getCookie("PHPSESSID");
-    $scope.public.userName = getCookie("userName");
-    $scope.public.isAdmin = getCookie("isAdmin");
+
 }
 
 var ngView = angular.module('ngView', ['ngRoute'], function($routeProvider, $locationProvider) {
