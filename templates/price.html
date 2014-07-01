@@ -58,3 +58,20 @@
 		</div>
 	</div>
 </div>
+<div class="modal">
+	<div class="modal__close"><i class="m-close" ng-click="hideLoginForm()"></i></div>
+	<div class="modal__container">
+		<div class="modal__data">
+			<form ng-submit="order()" ng-controller="orderController">
+				<div class="form-group">
+					<input type="text" class="form-control" id="inputName" placeholder="Имя" name="order_name" ng-model="orderName" required="required">
+				</div>
+				<div class="form-group">
+					<input type="text" class="form-control" id="inputPhone" placeholder="Телефон" name="order_phone" ng-model="orderPhone" required="required">
+				</div>
+				<button class="btn btn-success btn-lg" type="submit">Заказать</button>
+				<a class="login__container__abort btn" href="javascript:void(0)" ng-click="hideLoginForm()">Отмена</a>
+			</form>
+		</div>
+	</div>
+</div>
