@@ -19,7 +19,7 @@
 					<li><span>предварительная встреча</span></li>
 					<li><span>фото на DVD</span></li>
 				</ul>
-				<a class="btn btn-default btn-lg pricing__btn " href="#">Заказать</a>
+				<a class="btn btn-default btn-lg pricing__btn" ng-click="openOrderModal('Start')" href="javascript:void(0)">Заказать</a>
 			</div>
 			<div class="pricing__tarif pricing__tarif--middle">
 				<div class="pricing__tarif__price">
@@ -35,7 +35,7 @@
 					<li><span>фото на DVD</span></li>
 					<li><span>скидка 500р на love-story</span></li>
 				</ul>
-				<a class="btn btn-default btn-lg pricing__btn" href="#">Заказать</a>
+				<a class="btn btn-default btn-lg pricing__btn" ng-click="openOrderModal('Middle')" href="javascript:void(0)">Заказать</a>
 			</div>
 			<div class="pricing__tarif pricing__tarif--max">
 				<div class="pricing__tarif__price">
@@ -53,25 +53,28 @@
 					<li><span>скидка 500р на фото-альбом</span></li>
 					<li><span>картина на холсте в подарок</span></li>
 				</ul>
-				<a class="btn btn-default btn-lg pricing__btn" href="#">Заказать</a>
+				<a class="btn btn-default btn-lg pricing__btn" ng-click="openOrderModal('Pro')" href="javascript:void(0)">Заказать</a>
 			</div>
 		</div>
 	</div>
 </div>
-<div class="modal">
-	<div class="modal__close"><i class="m-close" ng-click="hideLoginForm()"></i></div>
+<div class="modal" ng-show="orderModalIsShow" ng-controller="orderController">
+	<div class="modal__close"><i class="m-close" ng-click="hideOrderForm()"></i></div>
 	<div class="modal__container">
-		<div class="modal__data">
-			<form ng-submit="order()" ng-controller="orderController">
+		<div class="modal__data" >
+			<form ng-submit="order()" ng-show="orderFormIsShow">
 				<div class="form-group">
 					<input type="text" class="form-control" id="inputName" placeholder="Имя" name="order_name" ng-model="orderName" required="required">
 				</div>
 				<div class="form-group">
 					<input type="text" class="form-control" id="inputPhone" placeholder="Телефон" name="order_phone" ng-model="orderPhone" required="required">
 				</div>
-				<button class="btn btn-success btn-lg" type="submit">Заказать</button>
-				<a class="login__container__abort btn" href="javascript:void(0)" ng-click="hideLoginForm()">Отмена</a>
+				<input type="text" class="form-control" style="display: none" id="inputSubject" name="order_tarif" ng-model="orderTarif">
+				<button class="btn btn-success" type="submit">Заказать</button>
+				<a class="login__container__abort btn" href="javascript:void(0)" ng-click="hideOrderForm()">Отмена</a>
 			</form>
+			<img ng-show="orderLoading" src="../img/loading.gif" alt="Loading"/>
+			<h2 ng-show="orderSuccess">Спасибо! Я свяжусь с вами в ближайшее время.</h2>
 		</div>
 	</div>
 </div>

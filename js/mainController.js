@@ -111,6 +111,17 @@ function ReportsController($scope, imageStack) {
     $scope.initPlugin(imageStack);
 }
 function PriceController($scope) {
+    $scope.openOrderModal = function(theme){
+        $scope.orderTarif = theme;
+        $scope.showOrderModal();
+        $scope.orderFormIsShow = true;
+    }
+    $scope.showOrderModal = function () {
+        $scope.orderModalIsShow = true;
+    }
+    $scope.hideOrderModal = function () {
+        $scope.orderModalIsShow = false;
+    }
 }
 function getCookie(cname) {
     var name = cname + "=";
