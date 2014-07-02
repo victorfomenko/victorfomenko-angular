@@ -59,7 +59,7 @@
 	</div>
 </div>
 <div class="modal" ng-show="orderModalIsShow" ng-controller="orderController">
-	<div class="modal__close"><i class="m-close" ng-click="hideOrderForm()"></i></div>
+	<div class="modal__close"><i class="m-close" ng-click="hideOrderModal()"></i></div>
 	<div class="modal__container">
 		<div class="modal__data" >
 			<form ng-submit="order()" ng-show="orderFormIsShow">
@@ -71,7 +71,7 @@
 				</div>
 				<input type="text" class="form-control" style="display: none" id="inputSubject" name="order_tarif" ng-model="orderTarif">
 				<button class="btn btn-success" type="submit">Заказать</button>
-				<a class="login__container__abort btn" href="javascript:void(0)" ng-click="hideOrderForm()">Отмена</a>
+				<a class="login__container__abort btn" href="javascript:void(0)" ng-click="hideOrderModal()">Отмена</a>
 			</form>
 			<img ng-show="orderLoading" src="../img/loading.gif" alt="Loading"/>
 			<h2 ng-show="orderSuccess">Спасибо! Я свяжусь с вами в ближайшее время.</h2>
